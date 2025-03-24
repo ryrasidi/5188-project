@@ -47,7 +47,6 @@ priors <- spTimer::spT.priors(
   model = "GP",
   inv.var.prior = spTimer::Gamm(2, 0.1),
   beta.prior = spTimer::Norm(0, 10^4),
-  decay.prior = decay_prior # [Updated]
 )
 
 # Define the specific two-month periods you want to run
@@ -65,7 +64,7 @@ for (month in selected_months) {
     coords = coords,
     model = "GP",
     priors = priors,
-    #decay = decay_prior,
+    decay = decay_prior,
     nItr = 100,
     nBurn = 10,
     cov.fnc = "exponential",
