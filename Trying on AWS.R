@@ -49,16 +49,16 @@ priors <- spTimer::spT.priors(
   beta.prior = spTimer::Norm(0, 10^4),
 )
 
-# Define the specific two-month periods you want to run
-selected_months <- c("Mar-Apr 2000", "May-Jun 2000")  # Replace with your desired months
-
 # Check column names in the data
-print(names(data))
+# print(names(data))
+
+# Define the specific two-month periods you want to run
+selected_months <- c("Mar.Apr.2000", "May.Jun.2000")  # Replace with your desired months
 
 # Loop over the selected months and fit the model
 models <- list()
 for (month in selected_months) {
-  column_name <- gsub("\\.", " ", month)  # Replace periods with spaces
+  column_name <- month  # Replace periods with spaces
   formula <- as.formula(paste0("`", month, "` ~ x + y"))  # Create formula dynamically
   
   # Fit the model
