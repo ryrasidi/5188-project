@@ -11,8 +11,6 @@ library(spTimer)
 library(ff)
 library(dplyr)
 
-
-
 # Load the dataset
 data <- read.csv("changi_train_wide.csv")
 
@@ -38,13 +36,20 @@ data <- data %>%
 # Extract coordinates
 coords <- as.matrix(data[, c("x", "y")])
 
+# Define spatial decay prior [Updated]
+decay_prior <- spTimer::spT.decay(
+  distribution = spTimer::Gamm(a = 2, b = 1),
+  tuning = 0.1
+)
 
 # Define priors
 priors <- spTimer::spT.priors(
   model = "GP",
   inv.var.prior = spTimer::Gamm(2, 0.1),
-  beta.prior = spTimer::Norm(0, 10^4)
+  beta.prior = spTimer::Norm(0, 10^4),
+  decay.prior = decay_prior # [Updated]
 )
+
 # Define the specific two-month periods you want to run
 selected_months <- c("Mar-Apr 2000", "May-Jun 2000")  # Replace with your desired months
 
