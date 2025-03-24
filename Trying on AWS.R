@@ -52,6 +52,9 @@ priors <- spTimer::spT.priors(
 # Define the specific two-month periods you want to run
 selected_months <- c("Mar-Apr 2000", "May-Jun 2000")  # Replace with your desired months
 
+# Check column names in the data
+print(names(data))
+
 # Loop over the selected months and fit the model
 models <- list()
 for (month in selected_months) {
