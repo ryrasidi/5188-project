@@ -58,6 +58,7 @@ print(names(data))
 # Loop over the selected months and fit the model
 models <- list()
 for (month in selected_months) {
+  column_name <- gsub("\\.", " ", month)  # Replace periods with spaces
   formula <- as.formula(paste0("`", month, "` ~ x + y"))  # Create formula dynamically
   
   # Fit the model
