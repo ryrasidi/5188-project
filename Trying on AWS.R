@@ -64,7 +64,7 @@ for (month in selected_months) {
     coords = coords,
     model = "GP",
     priors = priors,
-    decay = decay_prior,
+    #decay = decay_prior,
     nItr = 100,
     nBurn = 10,
     cov.fnc = "exponential",
