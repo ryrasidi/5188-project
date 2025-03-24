@@ -14,7 +14,7 @@ library(dplyr)
 
 
 # Load the dataset
-data <- read.csv("/Users/varshap/Downloads/ST5188/Data/Final/TT Split/changi_train_wide.csv")
+data <- read.csv("changi_train_wide.csv")
 
 # Randomly select 4000 rows
 set.seed(123)  # Ensures reproducibility
