@@ -2,7 +2,7 @@ library(tidyverse)
 library(stringr)
 
 # Load the dataset
-data <- read.csv("../../Data/Final/final_JURONG EAST_long.csv")
+data <- read.csv("final_JURONG EAST_long.csv")
 
 # Extract first month and year from the bi-monthly period
 # Example: "Mar-Apr 2000" -> Extract "Mar" and "2000"
