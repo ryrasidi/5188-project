@@ -1,5 +1,5 @@
-library(tidyverse)
-library(stringr)
+#library(tidyverse)
+#library(stringr)
 
 # Load the dataset
 data <- read.csv("final_JURONG EAST_long.csv")
