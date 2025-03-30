@@ -37,7 +37,7 @@ cat("Performing LOESS imputation...\n")
 loess_fit <- merged_data %>%
   group_by(x, y) %>%
   mutate(avg_LST = ifelse(is.na(avg_LST),
-                          predict(loess(avg_LST ~ as.numeric(Date), span = 0.5, data = ., na.action = na.exclude)),
+                          predict(loess(avg_LST ~ as.numeric(Date), span = 0.9, data = ., na.action = na.exclude)),
                           avg_LST))
 
 # Convert Date back to original bi-monthly format
