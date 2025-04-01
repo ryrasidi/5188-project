@@ -272,7 +272,7 @@ run_RMSE_experiment <- function(lag_lst,n_samples){
 }
 
 
-output_df <- run_RMSE_experiment(c(1,2,3,4,5,6,7,8,9,10,11,12)) 
+output_df <- run_RMSE_experiment(c(1,2,3,4,5,6,7,8,9,10,11,12),n_samples = 10) 
 colnames(output_df) <- c(c("ID"),1:12)
 write.csv(output_df, "lag_experiment.csv")
 
