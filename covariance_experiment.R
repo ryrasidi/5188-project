@@ -247,7 +247,7 @@ run_cov_experiment <- function(cov_lst,n_samples){
                            cov.fnc = fn,
                            spatial.decay = spT.decay(distribution = Gamm(4, 2), tuning = 6))
       
-      set.seed(5188)2
+      set.seed(5188)
       pred.gp <- predict.spT(post.gp, newdata = validation_df ,
                              type="temporal",newcoords= ~ x + y,
                              foreStep = 12,tol.dist = 0.0005) 
