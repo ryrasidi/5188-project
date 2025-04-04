@@ -236,7 +236,7 @@ run_RMSE_experiment <- function(lag_lst,n_samples){
       post.gp <- spT.Gibbs(formula = new_formula, 
                            data = train_df, model = "GP", 
                            coords = ~ x + y, scale.transform = "SQRT", 
-                           spatial.decay = spT.decay(distribution = Gamm(2, 1), tuning = 6))
+                           spatial.decay = spT.decay(distribution = Gamm(1, 1), tuning = 0.1))
       
       set.seed(5188)
       pred.gp <- predict.spT(post.gp, newdata = validation_df ,
