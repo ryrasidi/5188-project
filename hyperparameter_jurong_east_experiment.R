@@ -154,7 +154,7 @@ get_bimonth_year_columns <- function(df){
 
 
 #Original Data used:
-dir <- "C:/Users/samue/Documents/Masters/Sem 2/ST5188/st5188/Data/Final/final_JURONG EAST_long.csv"
+dir <- "ST5188/Data/Final/final_JURONG EAST_long.csv"
 data <- read.csv(dir)
 #Define Bounding Box to reduce computational complexity 
 resolution <- get_resolution(data)
